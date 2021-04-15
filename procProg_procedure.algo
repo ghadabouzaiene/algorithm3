@@ -1,5 +1,5 @@
 // procedure dot_product defintion
-PROCEDURE dot_product (VAR v1 : ARRAY_OF FLOAT [2] , VAR v2 : ARRAY_OF FLOAT [2])
+PROCEDURE dot_product (VAR v1 : ARRAY_OF FLOAT [3] , VAR v2 : ARRAY_OF FLOAT [3])
 VAR
     ps:= FLOAT ; 
     ps:=0
