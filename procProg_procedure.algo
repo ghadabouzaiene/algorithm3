@@ -5,7 +5,9 @@ VAR
     ps:=0
 BEGIN
         FOR i FROM 0 TO length.v1-1 STEP 1  DO
-        ps:=ps+v1[i]*v2[i]
+            FOR j FROM i TO length.v2-1 STEP 1 DO
+                ps:=ps+v1[i]*v2[j]
+            END_FOR
         END_FOR
     
 END
