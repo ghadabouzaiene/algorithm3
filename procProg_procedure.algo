@@ -1,0 +1,31 @@
+// procedure dot_product defintion
+PROCEDURE dot_product (VAR v1 : ARRAY_OF FLOAT [2] , VAR v2 : ARRAY_OF FLOAT [2])
+VAR
+    ps:= FLOAT ; 
+    ps:=0
+BEGIN
+        FOR i FROM 0 TO length.v1-1 STEP 1  DO
+        ps:=ps+v1[i]*v2[i]
+        END_FOR
+    
+END
+//calling the previous procedure in the algorithm
+ALGORITHM are_orthogonal
+VAR 
+    n: INTEGER ;
+    n:=1;
+BEGIN
+    REPEAT
+    read(n);
+    write ("give first vector");
+    read(v1);
+    write ("give second vector");
+    read (v2);
+    IF (dot_product(v1,v2)=0) THEN
+        write ("these are orthogonal vactors");
+    ELSE
+        write ("these are not orthogonal vectors");
+    END_IF
+    n:= n+1
+    UNTIL (n >= 100);
+END
