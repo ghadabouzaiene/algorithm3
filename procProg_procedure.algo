@@ -7,8 +7,15 @@ BEGIN
         FOR i FROM 0 TO length.v1-1 STEP 1  DO
             FOR j FROM i TO length.v2-1 STEP 1 DO
                 ps:=ps+v1[i]*v2[j]
+                
             END_FOR
         END_FOR
+        IF (ps := 0) THEN
+            write("Orthogonal")
+        
+        ELSE
+            write ("Not Orthogoanl")
+        END_IF
     
 END
 //calling the previous procedure in the algorithm
@@ -16,6 +23,7 @@ ALGORITHM are_orthogonal
 VAR 
     n: INTEGER ;
     n:=1;
+    
 BEGIN
     REPEAT
     read(n);
@@ -23,11 +31,7 @@ BEGIN
     read(v1);
     write ("give second vector");
     read (v2);
-    IF (dot_product(v1,v2)=0) THEN
-        write ("these are orthogonal vactors");
-    ELSE
-        write ("these are not orthogonal vectors");
-    END_IF
+    dot_product (v1,v2)
     n:= n+1
     UNTIL (n >= 100);
 END
